@@ -1,6 +1,7 @@
 //React Element
 import React from 'react';
 import './App.css'
+import {Header} from "./components/layout/Header";
 const titleText = 'This is a title';
 const titleId = 'main-title';
 const title = (
@@ -43,16 +44,16 @@ const players = [
   {name: 'GET', score: 40},
   {name: 'BMD', score: 50}
 ];
-const Header = (props) => {
-  console.log(props);
-  const {title, totalPlayer} = props;
-  return (
-    <header>
-      <h1>{title}</h1>
-      <span className="stats">Players: {totalPlayer}</span>
-    </header>
-  )
-}
+// const Header = (props) => {
+//   console.log(props);
+//   const {title, totalPlayer} = props;
+//   return (
+//     <header>
+//       <h1>{title}</h1>
+//       <span className="stats">Players: {totalPlayer}</span>
+//     </header>
+//   )
+// }
 
 const Player = (props) => {
   return (
