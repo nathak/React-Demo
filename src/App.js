@@ -1,7 +1,8 @@
 //React Element
 import React from 'react';
 import './App.css'
-import {Header} from "./components/layout/Header";
+import {Header} from "./components/score/Header";
+import {Player} from "./components/score/Player";
 const titleText = 'This is a title';
 const titleId = 'main-title';
 const title = (
@@ -55,61 +56,61 @@ const players = [
 //   )
 // }
 
-const Player = (props) => {
-  return (
-    <div className='player'>
-      <span className='player-name'>
-        <button onClick={() => props.removePlayer(props.id)} className='remove-player'>X</button>
-        {props.name}
-      </span>
-      <Counter />
-    </div>
-  )
-};
+// const Player = (props) => {
+//   return (
+//     <div className='player'>
+//       <span className='player-name'>
+//         <button onClick={() => props.removePlayer(props.id)} className='remove-player'>X</button>
+//         {props.name}
+//       </span>
+//       <Counter />
+//     </div>
+//   )
+// };
 
-class Counter extends React.Component{
-  constructor(props){
-    super(props);
-    //Bind 방식 1
-    this.state = {
-      score : 0
-    }
-  }
-  incrementScore = () =>{
-    //현재값 보장 못함
-    // this.setState({score : this.state.score + 1});
-    //현재값 보장함... 실행시 현재값 참조
-
-    // { 묶으면 노파싱 json 을 리턴함 // ( 으로 묶어야 json 처리값 리턴
-    this.setState(prevState => ({
-      score : this.state.score + 1
-    }));
-  };
-  decrementScore = () =>{
-    //현재값 보장 못함
-    // this.setState({score : this.state.score + 1});
-    //현재값 보장함... 실행시 현재값 참조
-
-    // { 묶으면 노파싱 json 을 리턴함 // ( 으로 묶어야 json 처리값 리턴
-    this.setState(prevState => ({
-      score: this.state.score - 1
-    }));
-  };
-  changeScore = (value) =>{
-    this.setState(prevState => ({
-      score : this.state.score + value
-    }));
-  };
-  render(){
-    return (
-      <div className='counter'>
-        <button className='counter-cation decrement' onClick={() => this.changeScore(-1)}>-</button>
-        <span className='counter-score'>{this.state.score}</span>
-        <button className='counter-cation increment' onClick={() => this.changeScore(1)}>+</button>
-      </div>
-    )
-  }
-}
+// class Counter extends React.Component{
+//   constructor(props){
+//     super(props);
+//     //Bind 방식 1
+//     this.state = {
+//       score : 0
+//     }
+//   }
+//   incrementScore = () =>{
+//     //현재값 보장 못함
+//     // this.setState({score : this.state.score + 1});
+//     //현재값 보장함... 실행시 현재값 참조
+//
+//     // { 묶으면 노파싱 json 을 리턴함 // ( 으로 묶어야 json 처리값 리턴
+//     this.setState(prevState => ({
+//       score : this.state.score + 1
+//     }));
+//   };
+//   decrementScore = () =>{
+//     //현재값 보장 못함
+//     // this.setState({score : this.state.score + 1});
+//     //현재값 보장함... 실행시 현재값 참조
+//
+//     // { 묶으면 노파싱 json 을 리턴함 // ( 으로 묶어야 json 처리값 리턴
+//     this.setState(prevState => ({
+//       score: this.state.score - 1
+//     }));
+//   };
+//   changeScore = (value) =>{
+//     this.setState(prevState => ({
+//       score : this.state.score + value
+//     }));
+//   };
+//   render(){
+//     return (
+//       <div className='counter'>
+//         <button className='counter-cation decrement' onClick={() => this.changeScore(-1)}>-</button>
+//         <span className='counter-score'>{this.state.score}</span>
+//         <button className='counter-cation increment' onClick={() => this.changeScore(1)}>+</button>
+//       </div>
+//     )
+//   }
+// }
 // const Counter = (props) => {
 //   return (
 //     <div className='counter'>
